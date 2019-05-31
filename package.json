@@ -1,0 +1,49 @@
+{
+  "name": "@eropple/bunyan-wrapper",
+  "version": "0.1.0",
+  "description": "Presents a subset of a Bunyan API that allows libraries to do some structured logging.",
+  "main": "dist",
+  "author": "Ed Ropple",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eropple/bunyan-wrapper"
+  },
+  "private": false,
+  "scripts": {
+    "build": "yarn exec -- tsc",
+    "watch": "yarn build --watch",
+    "test": "NODE_ENV=test yarn exec jest",
+    "prepare": "yarn test && yarn build"
+  },
+  "devDependencies": {
+    "@types/bunyan": "^1.8.6",
+    "@types/bunyan-blackhole": "^0.2.2",
+    "@types/jest": "^24.0.13",
+    "bunyan": "^1.8.12",
+    "bunyan-blackhole": "^1.1.1",
+    "jest": "^24.8.0",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.2.0",
+    "typescript": "^3.2.4"
+  },
+  "dependencies": {
+    "@eropple/is-logger": "^0.1.2",
+    "@hapi/joi": "^15.0.3",
+    "@types/hapi__joi": "^15.0.1"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  }
+}
