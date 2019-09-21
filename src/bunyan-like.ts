@@ -4,6 +4,7 @@ export interface BunyanLike {
   trace: (d: StringTo<any> | string, msg?: string) => any;
   debug: (d: StringTo<any> | string, msg?: string) => any;
   info: (d: StringTo<any> | string, msg?: string) => any;
+  warn: (d: StringTo<any> | string, msg?: string) => any;
   fatal: (d: StringTo<any> | string, msg?: string) => any;
   error: (d: StringTo<any> | string, msg?: string) => any;
 

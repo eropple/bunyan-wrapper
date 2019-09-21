@@ -3,4 +3,5 @@ export interface LoggerLike {
   debug: (msg: any) => any;
   info: (msg: any) => any;
   error: (msg: any) => any;
+  warn: (msg: any) => any;
 }

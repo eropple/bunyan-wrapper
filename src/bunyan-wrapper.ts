@@ -49,6 +49,18 @@ export class BunyanWrapper implements BunyanLike {
     }
   }
 
+  warn(d: string | StringTo<any>, msg?: string | undefined) {
+    if (typeof(d) === 'object') {
+      d = { ...this._context, ...d };
+    }
+
+    if (!msg) {
+      this._logger.warn(d);
+    } else {
+      this._logger.warn(`${msg} ${JSON.stringify(d)}`);
+    }
+  }
+
   error(d: string | StringTo<any>, msg?: string | undefined) {
     if (typeof(d) === 'object') {
       d = { ...this._context, ...d };
