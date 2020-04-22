@@ -21,7 +21,11 @@ export class BunyanWrapper implements BunyanLike {
     if (!msg) {
       this._logger.trace(d);
     } else {
-      this._logger.trace(`${msg} ${JSON.stringify(d)}`);
+      try {
+        this._logger.trace(`${msg} ${JSON.stringify(d)}`);
+      } catch (error) {
+        this._logger.trace(`Error ${msg} ${error}`);
+      }
     }
   }
 
@@ -33,7 +37,11 @@ export class BunyanWrapper implements BunyanLike {
     if (!msg) {
       this._logger.debug(d);
     } else {
-      this._logger.debug(`${msg} ${JSON.stringify(d)}`);
+      try {
+        this._logger.debug(`${msg} ${JSON.stringify(d)}`);
+      } catch (error) {
+        this._logger.debug(`Error ${msg} ${error}`);
+      }
     }
   }
 
@@ -45,7 +53,11 @@ export class BunyanWrapper implements BunyanLike {
     if (!msg) {
       this._logger.info(d);
     } else {
-      this._logger.info(`${msg} ${JSON.stringify(d)}`);
+      try {
+        this._logger.info(`${msg} ${JSON.stringify(d)}`);
+      } catch (error) {
+        this._logger.info(`Error ${msg} ${error}`);
+      }
     }
   }
 
@@ -57,7 +69,11 @@ export class BunyanWrapper implements BunyanLike {
     if (!msg) {
       this._logger.warn(d);
     } else {
-      this._logger.warn(`${msg} ${JSON.stringify(d)}`);
+      try {
+        this._logger.warn(`${msg} ${JSON.stringify(d)}`);
+      } catch (error) {
+        this._logger.warn(`Error ${msg} ${error}`);
+      }
     }
   }
 
@@ -69,7 +85,11 @@ export class BunyanWrapper implements BunyanLike {
     if (!msg) {
       this._logger.error(d);
     } else {
-      this._logger.error(`${msg} ${JSON.stringify(d)}`);
+      try {
+        this._logger.error(`${msg} ${JSON.stringify(d)}`);
+      } catch (error) {
+        this._logger.error(`Error ${msg} ${error}`);
+      }
     }
   }
 
@@ -81,7 +101,11 @@ export class BunyanWrapper implements BunyanLike {
     if (!msg) {
       this._logger.error(`FATAL: ${d}`);
     } else {
-      this._logger.error(`FATAL: ${msg} ${JSON.stringify(d)}`);
+      try {
+        this._logger.error(`FATAL: ${msg} ${JSON.stringify(d)}`);
+      } catch (error) {
+        this._logger.error(`Error: ${msg} ${error}`);
+      }
     }
   }
 }
